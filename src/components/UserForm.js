@@ -8,7 +8,7 @@ import { fetchRepos } from '../actions/repoActions';
 
 const UserForm = () => {
   const [query, setQuery] = useState('');
-  const dispatch = useDispatch();
+  const dispatchEvent = useDispatch();
   //const face = useSelector(getFace);
   //return <p className={styles.Face}>{face}</p>;
   // const onChange = () => {
