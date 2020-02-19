@@ -9,7 +9,7 @@ import UserInfo from './UserInfo';
 const UsersPage = () => {
   const dispatch = useDispatch();
   const loading = useSelector(isLoadingUsers);
-  const users j= useSelector(getUsers);
+  const users = useSelector(getUsers);
 
   useEffect(() => {
     dispatch(fetchUsers());

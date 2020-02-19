@@ -3,17 +3,17 @@ import { Link, useParams } from 'react-router-dom';
 
 const repos = require('../../data/myGithubRepos.json');
 
+// const RepoView = ({ repos}) => {
 const RepoView = () => {
-  
   //const { name } = useParams();
   //const repos = useRepos(name);
   const repoElements = repos.sort(function(a, b)  {
-    console.log(`a: ${a.name} b: ${b.name}`);
-    console.log(b.name.replace(/.*?(\d*)$/, '$1'));
+    //console.log(`a: ${a.name} b: ${b.name}`);
+    //console.log(b.name.replace(/.*?(\d*)$/, '$1'));
     //return Date(a.created_at) - Date(b.created_at);
     const aName = Number((a.name.replace(/.*?(\d*)$/, '$1'))) || 0;
     const bName = Number((b.name.replace(/.*?(\d*)$/, '$1'))) || 0;
-    console.log(`a-b: ${aName - bName}`);
+    //console.log(`a-b: ${aName - bName}`);
     return aName - bName;
   }).map(el => {
     const id = el.id;
