@@ -8,14 +8,16 @@ import {
 import RepoView from './RepoView';
 import UserForm from './UserForm';
 import UserInfo from './UserInfo';
+import GithubViewer from './GithubViewer';
+
 
 export default function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={UserInfo} />
-        <Route exact path="/:id" component={UserForm} />
-        <Route exact path="/" component={RepoView} />
+        <Route exact path="/" component={GithubViewer} />
+        {/* <Route exact path="/:id" component={UserForm} />
+        <Route exact path="/" component={RepoView} /> */}
         {/* <UserForm />
       <UserInfo />
       <RepoView /> */}
