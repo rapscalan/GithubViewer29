@@ -1,21 +1,11 @@
-import React, { useEffect } from 'react';
-import useRepos from '../reducers/userReducer';
-import { Link, useParams } from 'react-router-dom';
-import Loading from '../components/Loading';
-import { useDispatch, useSelector } from 'react-redux';
-import { isLoadingRepos, getRepos } from '../selectors/reposSelectors';
-
-import { fetchRepos } from '../actions/repoActions';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { getRepos } from '../selectors/reposSelectors';
 
 export default function RepoView(){
   const state = useSelector(state => state);
   const repos = getRepos(state);
 
-  const dispatch = useDispatch();
-  const loading = useSelector(isLoadingRepos);
-  
-  console.log('repos: ', repos);
-  
   const repoElements = repos.sort(function(a, b)  {
     
     const aName = Number((a.name.replace(/.*?(\d*)$/, '$1'))) || 0;
@@ -29,12 +19,6 @@ export default function RepoView(){
       <li key={id}>
         <a href={el.clone_url}>{name}</a>
       </li>
-      // <li key={el.id}>
-      //   <Link to={`/release/${el.id}/${name}`}>
-      //     <img src={coverArt}></img>
-      //     <h2>{title}</h2>
-      //   </Link>
-      // </li>
     );
   });
 
@@ -44,5 +28,3 @@ export default function RepoView(){
     </ul>
   );
 }
-
-//export default RepoView;
