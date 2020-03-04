@@ -20,7 +20,6 @@ export const getUsers = username => {
       };
     });
 };
-//"repos_url": "https://api.github.com/users/rapscalan/repos"
 export const getRepos = username => {
   return fetch(`https://api.github.com/users/${username}/repos`)
     .then((res) => Promise.all([res.ok, res.json()]))

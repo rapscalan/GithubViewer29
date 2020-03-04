@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Loading from '../Loading';
-import User from './UserInfo';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from '../actions/userActions';
 import { getUsers, isLoadingUsers } from '../selectors/usersSelectors';
