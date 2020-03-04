@@ -9,7 +9,8 @@ import { getUsers, isLoadingUsers } from '../selectors/usersSelectors';
 //import { Link, useParams } from 'react-router-dom';
 //const userinfo = require('../../data/MyGithubInfo.json');
 
-const UserInfo = (query) => 
+// const UserInfo = (query) => 
+export default function UserInfo()
 {
   const state = useSelector(state => state);
   const user = getUsers(state);
@@ -23,15 +24,21 @@ const UserInfo = (query) =>
   //const since = new Date(userinfo.created_at).toDateString();
   // const user = 
   return (
-    <section>
-      user: {user.userdetail} user since:{user.since}<br />
-      following: {user.following} followers: {user.followers}
-      <br /><a href={user.html_url}>profile: {user.html_url}</a>
-      {/* user:{userinfo.login} user since:{since}<br />
+    <>
+    {user.user.userdetail &&
+      <section>
+      user: {user.user.userdetail.username} <br />
+      following: {user.user.
+      userdetail.followingCount} followers: {user.user.
+      userdetail.followerCount}
+        <br /><a href={user.user.
+          userdetail.html_url}>profile: {user.user.userdetail.html_url}</a>
+        {/* user:{userinfo.login} user since:{since}<br />
       following: {userinfo.following} followers: {userinfo.followers}
       <br /><a href={userinfo.html_url}>profile: {userinfo.html_url}</a> */}
-    </section>
+      </section> }
+    </ >
   );
-};
+}
 
-export default UserInfo;
+//export default UserInfo;
